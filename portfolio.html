@@ -3,161 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dinesh | Portfolio</title>
+  <title>About Me</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body, html {
-      margin: 0;
-      padding: 0;
       height: 100%;
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      background-color: #f0f6ff;
+      margin: 0;
     }
 
-    .slider-container {
-      display: flex;
+    .about-section {
       height: 100vh;
-      width: 400%; /* 4 slides */
-      transition: transform 0.7s ease-in-out;
-    }
-
-    .slide {
-      flex: 0 0 100%;
+      background: linear-gradient(to right, #1e3c72, #2a5298); /* Blue gradient */
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       text-align: center;
-      color: white;
-      height: 100vh;
+      padding: 40px;
     }
 
-    .hero { background: linear-gradient(to right, #1e3c72, #2a5298); }
-    .about { background: linear-gradient(to right, #2a5298, #1e3c72); }
-    .work { background: linear-gradient(to right, #1e3c72, #2a5298); }
-    .skills { background: linear-gradient(to right, #2a5298, #1e3c72); }
-
-    h1, h2 { font-weight: bold; }
-    p { max-width: 700px; margin: auto; }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 2rem;
-      background: rgba(255,255,255,0.3);
-      border: none;
-      color: white;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 50%;
-      transition: 0.3s;
-    }
-    .arrow:hover { background: rgba(255,255,255,0.6); }
-
-    .arrow.left { left: 20px; }
-    .arrow.right { right: 20px; }
-
-    /* Skills grid */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      width: 80%;
-      margin-top: 30px;
-    }
-    .skill-card {
-      background: rgba(255,255,255,0.2);
-      padding: 20px;
-      border-radius: 10px;
-      color: #fff;
+    h1, h2 {
       font-weight: bold;
+    }
+
+    p {
+      max-width: 700px;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Slider -->
-  <div class="slider-container" id="slider">
-    <!-- Hero -->
-    <section class="slide hero">
-      <h1>Hi, I'm Dinesh 👋</h1>
-      <p>Embedded Software Engineer | BMS | Motor Control</p>
-    </section>
-
-    <!-- About -->
-    <section class="slide about">
-      <h2>About Me</h2>
-      <p>
-        I am a passionate Embedded Software Engineer specializing in Battery Management Systems 
-        and Motor Control solutions. I enjoy solving real-world problems with clean, 
-        efficient code and innovative designs.
-      </p>
-    </section>
-
-    <!-- Work -->
-    <section class="slide work">
-      <h2>Work Experience</h2>
-      <ul style="list-style:none; padding:0;">
-        <li><strong>Motherson Automotive</strong> – Embedded Software Engineer</li>
-        <li><strong>SGEM</strong> – Product Design & Development Engineer</li>
-      </ul>
-    </section>
-
-    <!-- Skills -->
-    <section class="slide skills">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">Embedded C</div>
-        <div class="skill-card">RTOS (RTX)</div>
-        <div class="skill-card">SPI, CAN, UART</div>
-        <div class="skill-card">BMS & Motor Control</div>
-        <div class="skill-card">PCB Design</div>
-        <div class="skill-card">Debugging & Testing</div>
-      </div>
-    </section>
-  </div>
-
-  <!-- Arrows -->
-  <button class="arrow left" onclick="prevSlide()">&#8592;</button>
-  <button class="arrow right" onclick="nextSlide()">&#8594;</button>
-
-  <script>
-    let currentSlide = 0;
-    const slider = document.getElementById("slider");
-    const totalSlides = 4;
-
-    function updateSlide() {
-      slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    function nextSlide() {
-      if (currentSlide < totalSlides - 1) {
-        currentSlide++;
-        updateSlide();
-      }
-    }
-
-    function prevSlide() {
-      if (currentSlide > 0) {
-        currentSlide--;
-        updateSlide();
-      }
-    }
-
-    // Swipe support for mobile
-    let startX = 0;
-    slider.addEventListener("touchstart", e => {
-      startX = e.touches[0].clientX;
-    });
-    slider.addEventListener("touchend", e => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) nextSlide();
-      if (endX - startX > 50) prevSlide();
-    });
-  </script>
+  <section class="about-section">
+    <h1>About Me</h1>
+    <p>
+      I am Dinesh, a passionate Embedded Software Engineer specializing in 
+      Battery Management Systems and Motor Control.  
+      I enjoy solving real-world engineering challenges through innovative 
+      design and efficient code.
+    </p>
+  </section>
 
 </body>
 </html>
+
 
