@@ -5,15 +5,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dinesh | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
       scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
     }
-    section {
-      padding: 80px 0;
+
+    /* Navbar */
+    nav {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     nav a {
       margin: 0 15px;
+      font-weight: 500;
+    }
+
+    /* Hero Section */
+    #hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+    }
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    #hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+
+    /* Cards */
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    /* Skills icons */
+    .skill-icon {
+      font-size: 2rem;
+      color: #2575fc;
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background: #f8f9fa;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -22,8 +76,11 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Dinesh</a>
-      <div class="collapse navbar-collapse">
+      <a class="navbar-brand fw-bold" href="#">Dinesh</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#work">Work Experience</a></li>
@@ -33,42 +90,86 @@
     </div>
   </nav>
 
+  <!-- Hero Section -->
+  <section id="hero">
+    <h1>Hello, I'm Dinesh</h1>
+    <p>Embedded Software Engineer | BMS & Motor Control Specialist | Passionate about creating reliable and efficient embedded solutions</p>
+    <a href="#about" class="btn btn-outline-light btn-lg mt-3">Know More</a>
+  </section>
+
   <!-- About Section -->
   <section id="about" class="bg-light">
     <div class="container">
-      <h2>About Me</h2>
-      <p>I am a dedicated Embedded Software Engineer with experience in BMS and Motor Control systems...</p>
+      <h2 class="text-center mb-5">About Me</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <p>
+            I am a dedicated Embedded Software Engineer with experience in Battery Management Systems (BMS) and Motor Control. I specialize in RTOS-based architectures, low-level driver development, and complete hardware-software integration. I enjoy solving complex problems and creating solutions that make embedded systems smarter and more efficient.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Work Experience Section -->
   <section id="work">
     <div class="container">
-      <h2>Work Experience</h2>
-      <ul>
-        <li><strong>Company:</strong> Motherson Automotive – <em>Embedded Software Engineer</em></li>
-        <li><strong>Company:</strong> SGEM – <em>Product Design & Development</em></li>
-        <!-- Add more experiences here -->
-      </ul>
+      <h2 class="text-center mb-5">Work Experience</h2>
+      <div class="row g-4">
+        <!-- Work Card 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4">
+            <h5 class="card-title">Motherson Automotive</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Embedded Software Engineer</h6>
+            <p class="card-text">Developed BMS and Motor Control firmware, SPI & CAN drivers, and implemented RTOS-based architectures.</p>
+          </div>
+        </div>
+        <!-- Work Card 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card p-4">
+            <h5 class="card-title">SGEM</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Product Design & Development</h6>
+            <p class="card-text">Worked on embedded system design and validation, including hardware bring-up and firmware testing for EV projects.</p>
+          </div>
+        </div>
+        <!-- Add more cards as needed -->
+      </div>
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="bg-light">
     <div class="container">
-      <h2>Skills</h2>
-      <ul>
-        <li>Embedded C, C++</li>
-        <li>RTOS (RTX), SPI, CAN, UART</li>
-        <li>BMS & Motor Control</li>
-        <li>PCB Design & Hardware Bring-up</li>
-        <!-- Add more skills here -->
-      </ul>
+      <h2 class="text-center mb-5">Skills</h2>
+      <div class="row g-4 text-center">
+        <div class="col-md-3">
+          <i class="fas fa-code skill-icon"></i>
+          <h5>Embedded C / C++</h5>
+        </div>
+        <div class="col-md-3">
+          <i class="fas fa-microchip skill-icon"></i>
+          <h5>RTOS (RTX)</h5>
+        </div>
+        <div class="col-md-3">
+          <i class="fas fa-bolt skill-icon"></i>
+          <h5>BMS & Motor Control</h5>
+        </div>
+        <div class="col-md-3">
+          <i class="fas fa-cogs skill-icon"></i>
+          <h5>PCB Design & Hardware</h5>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Dinesh. All Rights Reserved.
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
